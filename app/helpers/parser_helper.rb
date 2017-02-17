@@ -25,4 +25,28 @@ module ParserHelper
 
     outline
   end
+
+  def self.parse_old(words)
+    lines = words.split("\n")
+
+    linenum =0;
+    outline = ''
+    lines.each do |line|
+      if line.empty?
+        linenum = 0
+        next
+      end
+      case linenum
+        when 0
+          outline << "<h2><a href=\"\">#{line}</a><h2>\n"
+        when 1
+          outline << "<h4>#{line}</h4>\n"
+        when 2
+          outline << line.gsub(/(More)../, '<a href="">\1</a>'+"\n\n")
+      end
+      linenum += 1
+    end
+
+    outline
+  end
 end

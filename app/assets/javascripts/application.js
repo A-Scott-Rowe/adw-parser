@@ -24,11 +24,11 @@ $(document).ready(function() {
     $('#button').click(function() {
 
         var serializedData = $('#input').val();
-
+        var combo = $('#role').val();
         request = $.ajax({
             url: "/parser/post",
             type: "POST",
-            data: {input: serializedData},
+            data: {input: serializedData, style: combo},
             success: function(data)
             {
                 //populate the TextArea

@@ -3,5 +3,6 @@
     <%= label_tag(:q, "Raw Text:") %>
     <%= text_area_tag(:input) %>
     <%= text_area_tag(:output) %>
+    <%= select_tag :role, options_for_select([["New", "n"], ["Old", "o"]]) %>
     <%= button_tag("Submit", type: 'button', id: 'button') %>
 <% end %>
