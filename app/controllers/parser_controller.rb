@@ -3,7 +3,7 @@ class ParserController < ApplicationController
   end
 
   def post
-    if params['combo'] == 'n'
+    if params['style'] == 'n'
       text = ParserHelper.parse(params['input'])
     else
       text = ParserHelper.parse_old(params['input'])
